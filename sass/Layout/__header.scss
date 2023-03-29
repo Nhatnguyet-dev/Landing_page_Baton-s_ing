@@ -1,0 +1,89 @@
+// Header
+body { 
+    font-size: 15px;
+    font-family: 'Merriweather', serif;
+header{
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: block;
+  z-index: 10;
+
+    .header__nav {
+        .nav_container {
+            width: 85%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+      // Logo
+     .header__logo {
+        background-image: url(./../../img/LOGO.jpg);
+        width: 7%;
+        height: 70px;
+        background-position: center;
+        object-fit: cover;
+        border-radius: 10px;
+     }
+      //nav
+        #navbarNav {
+            justify-content: flex-end;
+            .navbar-nav {
+                width: 70%;
+                display: flex;
+                justify-content: space-around;
+        .nav-item {
+            a {
+               @include styleText(1rem , bold, $color--text-1 );
+               letter-spacing: 2px;
+            }
+            .active {
+                color: $color--br;
+            }
+          padding: 1rem 0;
+           &::after {
+            content: "";
+            width: 0%;
+            height: 5px;
+            background-color: $color--br;
+            border-radius: 10px;
+            display: block;
+            transition: width 0.4s cubic-bezier(0.51, 0.18, 0, 0.88) 0.1s;
+           }
+           &:first-child::after {
+            width: 100%;
+            animation: none;
+           }
+          &:hover{
+           &::after {
+            animation: myAD 0.7s linear;
+           }
+           a {
+            color: $color--br;
+            cursor: pointer;
+           }
+        }
+        }
+            }
+        }
+    }
+    }
+}
+}
+
+
+
+@keyframes myAD{
+    0%{
+      width: 0;
+    }
+    20%{
+      width: 20%;
+    }
+    60%{
+      width: 60%;
+    }
+    100%{
+      width: 100%;
+    }
+  
+  }

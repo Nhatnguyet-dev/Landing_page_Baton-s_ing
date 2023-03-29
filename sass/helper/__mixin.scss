@@ -1,0 +1,50 @@
+@mixin styleText($fs,$fw,$color){
+    font-size: $fs;
+    font-weight: $fw;
+    color: $color;
+}
+
+@mixin styleButton($bg,$pd-y,$pd-x,$bd,$radius,$ls){
+    background-color: $bg;
+    padding: $pd-y , $pd-x;
+    border: $bd;
+    border-radius: $radius;
+    letter-spacing: $ls;
+}
+
+@mixin initCenter($w){
+    width: $w;
+    margin: 0 auto;
+}
+
+@mixin initFlex($just){
+    display: flex;
+    justify-content: $just;
+    align-items: center;
+}
+
+@mixin responsive($canvas) {
+    @if $canvas == xs {
+      @media only screen and (min-width: 320px) { @content; }
+    }
+  
+    @else if $canvas == sm {
+      @media only screen and (min-width: 576px) { @content; }
+    }
+  
+    @else if $canvas == md {
+      @media only screen and (min-width: 768px) { @content; }
+    }
+  
+    @else if $canvas == lg {
+      @media only screen and (min-width: 992px) { @content; }
+    }
+  
+    @else if $canvas == xl {
+      @media only screen and (min-width: 1200px) { @content; }
+    }
+  
+    @else if $canvas == xxl {
+      @media only screen and (min-width: 1600px) { @content; }
+    }
+  }
